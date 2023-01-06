@@ -1,13 +1,21 @@
 package com.aldodell.pilotoprivado
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
+import kotlin.concurrent.schedule
 
 class PreguntaAdaptador(var pregunta: Pregunta, val siguiente: () -> Unit) :
     RecyclerView.Adapter<PreguntaAdaptador.ViewHolder>() {
+
+    val tiempoTransicion: Long = 1000
+
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val boton: Button
 
@@ -39,15 +47,39 @@ class PreguntaAdaptador(var pregunta: Pregunta, val siguiente: () -> Unit) :
             var r = ""
 
             when (position) {
-                0 -> r = "a"
-                1 -> r = "b"
-                2 -> r = "c"
-                3 -> r = "d"
-                4 -> r = "e"
+                0 -> r = "A"
+                1 -> r = "B"
+                2 -> r = "C"
+                3 -> r = "D"
+                4 -> r = "E"
             }
             pregunta.respuesta = r
             baseDatos.preguntaDao().actualizar(pregunta)
-            siguiente()
+
+
+            if (pregunta.correcta != pregunta.respuesta) {
+                holder.boton.setBackgroundColor(Color.RED)
+
+            } else {
+                holder.boton.setBackgroundColor(
+                    ContextCompat.getColor(
+                        holder.boton.context,
+                        com.google.android.material.R.color.design_default_color_secondary
+                    )
+                )
+            }
+
+            Timer().schedule(tiempoTransicion) {
+                holder.boton.setBackgroundColor(
+                    ContextCompat.getColor(
+                        holder.boton.context,
+                        com.google.android.material.R.color.design_default_color_primary
+
+                    )
+                )
+                siguiente()
+            }
+
         }
     }
 

@@ -23,8 +23,14 @@ interface PreguntaDao {
     @Query("select distinct materia from preguntas order by materia ")
     fun materias(): List<String>
 
-    @Query("select * from preguntas where materia=:materia")
+    @Query("select * from preguntas where materia=:materia and respuesta=''")
     fun preguntasPorMateria(materia: String): List<Pregunta>
+
+    @Query("select count(*) from preguntas where materia=:materia and (trim(respuesta) = trim(correcta))")
+    fun respuestasCorrectas(materia: String): Int
+
+    @Query("select count(pregunta) from preguntas where materia=:materia")
+    fun cantidadDePreguntasPorMateria(materia: String): Int
 
     @Query("update preguntas set respuesta=''")
     fun reiniciar(): Unit

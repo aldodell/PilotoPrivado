@@ -1,7 +1,9 @@
 package com.aldodell.pilotoprivado
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -30,8 +32,28 @@ class CuestionarioActivity : AppCompatActivity() {
     }
 
     fun siguiente() {
-        tvPregunta.setText(preguntas[indicePregunta].pregunta)
-        rvRespuestas.adapter = PreguntaAdaptador(preguntas[indicePregunta]) { siguiente() }
-        indicePregunta += 1
+
+        runOnUiThread {
+            //Cuando alcanzamos el final Damos un mensaje y salimos de aqu'i
+            if (indicePregunta == preguntas.count()) {
+
+                AlertDialog
+                    .Builder(this)
+                    .setMessage(R.string.mensaje_fin_materia)
+                    .setPositiveButton(
+                        R.string.ok,
+                        DialogInterface.OnClickListener { dialogInterface, i ->
+                            finish()
+                        })
+                    .create()
+                    .show()
+            } else {
+                tvPregunta.setText(preguntas[indicePregunta].pregunta)
+                rvRespuestas.adapter = PreguntaAdaptador(preguntas[indicePregunta]) { siguiente() }
+                indicePregunta += 1
+            }
+        }
     }
+
+
 }

@@ -2,4 +2,12 @@
     <string name="app_name">PilotoPrivado</string>
     <string name="piloto_privado">Piloto privado</string>
     <string name="materia">Materia</string>
+    <string name="mensaje_fin_materia">Se ha llegado al final de las preguntas de esta materia</string>
+    <string name="ok">Aceptar</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="mostrar_resultados">Mostrar resultados</string>
+    <string name="reiniciar_respuestas">Reiniciar respuestas</string>
+    <string name="mensaje_reinicio">Al hacer click acá reiniciará las respuestas en todas las materias, ¿Desea hacerlo?</string>
+    <string name="resultados">Resultados</string>
 </resources>
