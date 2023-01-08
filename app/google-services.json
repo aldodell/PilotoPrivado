@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "636910963451",
+    "project_id": "validaraplicacionesdelldor",
+    "storage_bucket": "validaraplicacionesdelldor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636910963451:android:33b1eb837953a5e5803e5e",
+        "android_client_info": {
+          "package_name": "com.aldodell.pilotoprivado"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636910963451-7cuv5oqsvgt6ikh2c3r9i4acgsq3g2va.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2HuT5O1IFw_nWnTFWvc1UrFu5JNNzSUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636910963451-7cuv5oqsvgt6ikh2c3r9i4acgsq3g2va.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636910963451:android:978dbc29daf029fb803e5e",
+        "android_client_info": {
+          "package_name": "com.delldor.validador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636910963451-7cuv5oqsvgt6ikh2c3r9i4acgsq3g2va.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2HuT5O1IFw_nWnTFWvc1UrFu5JNNzSUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636910963451-7cuv5oqsvgt6ikh2c3r9i4acgsq3g2va.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

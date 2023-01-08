@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PilotoPrivado</string>
+    <string name="app_name">Piloto Privado</string>
     <string name="piloto_privado">Piloto privado</string>
     <string name="materia">Materia</string>
     <string name="mensaje_fin_materia">Se ha llegado al final de las preguntas de esta materia</string>
@@ -10,4 +10,19 @@
     <string name="reiniciar_respuestas">Reiniciar respuestas</string>
     <string name="mensaje_reinicio">Al hacer click acá reiniciará las respuestas en todas las materias, ¿Desea hacerlo?</string>
     <string name="resultados">Resultados</string>
-</resources>
+    <string name="mensaje_registro">
+
+        ¡Gracias por usar esta aplicación!
+        Esta es una aplicación gratuita. Tu colaboración voluntaria ayudará a mejorarla y a desarrollar otras herramientas con fines similares.
+
+        Pago móvil:
+        04126127152 - 14072162 Banesco (0134)
+
+        PayPal:
+        aldodell@gmail.com
+
+        A efectos de seguimiento, luego de hacer efectiva tu colaboración pasa el código que se muestra a continuación
+        y escribe el código que te enviaremos luego.
+
+</string>
+    <string name="seleccionar_materia">Selecciona la materia:</string></resources>

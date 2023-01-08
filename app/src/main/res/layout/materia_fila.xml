@@ -8,5 +8,6 @@
         android:id="@+id/btMateria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:contentDescription="@string/materia" />
 </LinearLayout>

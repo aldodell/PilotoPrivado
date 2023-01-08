@@ -1,0 +1,13 @@
+
+<resources>
+    <attr name="colorCorrecto" format="color" />
+    <attr name="colorOnCorrecto" format="color" />
+    <attr name="colorCorrectoContainer" format="color" />
+    <attr name="colorOnCorrectoContainer" format="color" />
+    <attr name="harmonizeCorrecto" format="boolean" />
+    <attr name="colorError" format="color" />
+    <attr name="colorOnError" format="color" />
+    <attr name="colorErrorContainer" format="color" />
+    <attr name="colorOnErrorContainer" format="color" />
+    <attr name="harmonizeError" format="boolean" />
+</resources>

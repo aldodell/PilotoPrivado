@@ -1,6 +1,7 @@
 package com.aldodell.pilotoprivado
 
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -14,6 +15,7 @@ class CuestionarioActivity : AppCompatActivity() {
     lateinit var rvRespuestas: RecyclerView
     lateinit var preguntas: List<Pregunta>
     var indicePregunta = 0
+    lateinit var registro: Registro
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +28,7 @@ class CuestionarioActivity : AppCompatActivity() {
 
         val materia = this.intent.getStringExtra("materia")!!
         preguntas = baseDatos.preguntaDao().preguntasPorMateria(materia)
-
+        registro = Registro(this)
         siguiente()
 
     }
@@ -34,6 +36,11 @@ class CuestionarioActivity : AppCompatActivity() {
     fun siguiente() {
 
         runOnUiThread {
+            if (!registro.valido) {
+                val intento = Intent(this, RegistroActivity::class.java)
+                startActivity(intento)
+            }
+
             //Cuando alcanzamos el final Damos un mensaje y salimos de aqu'i
             if (indicePregunta == preguntas.count()) {
 
