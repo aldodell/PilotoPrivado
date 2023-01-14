@@ -13,16 +13,22 @@
     <string name="mensaje_registro">
 
         ¡Gracias por usar esta aplicación!
-        Esta es una aplicación gratuita. Tu colaboración voluntaria ayudará a mejorarla y a desarrollar otras herramientas con fines similares.
+        Tu colaboración voluntaria ayudará a mejorarla y a desarrollar otras herramientas con fines similares.
+        \n
 
-        Pago móvil:
-        04126127152 - 14072162 Banesco (0134)
+         <b>Pago móvil:</b> \n
+        04126127152\n
+        V14072162\n
+        Banesco (0134)\n
 
-        PayPal:
-        aldodell@gmail.com
+         <b>PayPal:</b>\n
+         aldodell@gmail.com\n
 
-        A efectos de seguimiento, luego de hacer efectiva tu colaboración pasa el código que se muestra a continuación
-        y escribe el código que te enviaremos luego.
+    A efectos de seguimiento, luego de hacer efectiva tu colaboración pasa el código que se muestra
+    a continuación y escribe el código que te enviaremos luego.
+
 
 </string>
-    <string name="seleccionar_materia">Selecciona la materia:</string></resources>
+    <string name="seleccionar_materia">Selecciona la materia:</string>
+    <string name="registar_app">Registrar aplicativo</string>
+</resources>

@@ -15,7 +15,6 @@ class PreguntaAdaptador(var pregunta: Pregunta, val siguiente: () -> Unit) :
 
     val tiempoTransicion: Long = 1000
 
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val boton: Button
 

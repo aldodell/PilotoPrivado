@@ -36,7 +36,7 @@ class CuestionarioActivity : AppCompatActivity() {
     fun siguiente() {
 
         runOnUiThread {
-            if (!registro.valido) {
+            if (!registro.puedeUsar) {
                 val intento = Intent(this, RegistroActivity::class.java)
                 startActivity(intento)
             }

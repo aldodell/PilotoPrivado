@@ -4,55 +4,72 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
-class Registro(context: Context) {
+class Registro(val context: Context, val mascara: Int = 0xFFFF, val limite: Int = 100) {
+
+    //Referencia a las preferencias de registro
     val preferencias = context.getSharedPreferences("registro", AppCompatActivity.MODE_PRIVATE)
 
+    //Genera una cadena aleatoria para ser validada
     fun generador(): String {
+
+
         var r = preferencias.getString("semilla", null)
+
+        //La primera vez crea una semilla y habilita las pruebas
         if (r == null) {
-            r = ""
-            for (i in 0..3) {
-                val d = Random.nextInt(15)
-                r += d.toString(16)
-            }
-            preferencias.edit().putString("semilla", r).apply()
+            r = Random.nextInt(mascara).toString(16)
+            preferencias.edit()
+                .putString("semilla", r)
+                .putBoolean("activo", false)
+                .putInt("pruebas", limite)
+                .apply()
+
         }
         return r
     }
 
+    //Procesa un registro, si es correcto lo guarda
     fun procesarRegistro(codigo: String): Boolean {
-
-        val semilla = generador()
         var paso = true
-
-        for (i in 0..3) {
-            val d = codigo.substring(i, i + 1)
-            val n = d.toInt(16)
-
-            val s = semilla.substring(i, i + 1)
-            val m = s.toInt(16)
-            if ((n + m) != 15) {
-                paso = false
-            }
-        }
-
-        if (paso) {
-            preferencias.edit().putBoolean("activo", true).apply()
-        } else {
-            preferencias.edit().putBoolean("activo", false).apply()
-        }
-
+        val semilla = generador()
+        val a = mascara - semilla.toInt(16)
+        paso = codigo.trim() == a.toString(16)
+        preferencias.edit()
+            .putBoolean("activo", paso)
+            .apply()
         return paso
     }
+
+
+    val activo: Boolean
+        get() {
+            return preferencias.getBoolean("activo", false)
+        }
+
+    val puedeProbar: Boolean
+        get() {
+            pruebas -= 1
+            return pruebas > 0
+        }
+
+    var pruebas: Int
+        get() {
+            val p = preferencias.getInt("pruebas", -1)
+            if (p < 0) pruebas = limite
+            return p
+        }
+        set(value) {
+            var p = value
+            if (p < 0) p = 0
+            preferencias.edit().putInt("pruebas", p).apply()
+        }
+
+    val puedeUsar: Boolean
+        get() = activo || puedeProbar
 
     init {
         generador()
     }
 
-    val valido: Boolean
-        get() {
-
-            return preferencias.getBoolean("activo", false)
-        }
 
 }

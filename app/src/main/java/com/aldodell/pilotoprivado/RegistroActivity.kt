@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 
 class RegistroActivity : AppCompatActivity() {
 
@@ -13,6 +14,8 @@ class RegistroActivity : AppCompatActivity() {
     lateinit var btProcesarRegistro: Button
     lateinit var tvCodigoSemilla: TextView
     lateinit var preferencias: SharedPreferences
+    lateinit var tvMensajeRegistro: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,12 +28,19 @@ class RegistroActivity : AppCompatActivity() {
         tvCodigoSemilla = findViewById(R.id.tvCodigoSemilla)
         preferencias = this.getPreferences(MODE_PRIVATE)
         tvCodigoSemilla.text = registro.generador()
+        tvMensajeRegistro = findViewById(R.id.tvMensajeRegistro)
 
         btProcesarRegistro.setOnClickListener {
             if (registro.procesarRegistro(etCodigoRegistro.text.toString().trim())) {
                 finish()
             }
         }
+
+
+       // val spanned = HtmlCompat.fromHtml(resources.getString(R.string.mensaje_registro),HtmlCompat.FROM_HTML_MODE_LEGACY)
+    //    tvMensajeRegistro.text = spanned
+
+
     }
 
 
