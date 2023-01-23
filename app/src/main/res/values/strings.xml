@@ -21,14 +21,19 @@
         V14072162\n
         Banesco (0134)\n
 
+           A efectos de seguimiento, luego de hacer efectiva tu colaboración pasa el código que se muestra
+    a continuación y escribe el código que te enviaremos luego.
+
          <b>PayPal:</b>\n
          aldodell@gmail.com\n
 
-    A efectos de seguimiento, luego de hacer efectiva tu colaboración pasa el código que se muestra
-    a continuación y escribe el código que te enviaremos luego.
+
 
 
 </string>
     <string name="seleccionar_materia">Selecciona la materia:</string>
     <string name="registar_app">Registrar aplicativo</string>
+    <string name="mensaje2" >Con la colaboración que aportes estarás ayudando a desarrollar más aplicaciones como ésta. Esperamos te sea muy útil. ¡Gracias por tu apoyo!
+    </string>
+    <string name="boton_pago">Apoyar con PayPal (o tarjeta)</string>
 </resources>

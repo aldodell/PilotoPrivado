@@ -12,7 +12,6 @@ class Registro(val context: Context, val mascara: Int = 0xFFFF, val limite: Int 
     //Genera una cadena aleatoria para ser validada
     fun generador(): String {
 
-
         var r = preferencias.getString("semilla", null)
 
         //La primera vez crea una semilla y habilita las pruebas
@@ -39,7 +38,6 @@ class Registro(val context: Context, val mascara: Int = 0xFFFF, val limite: Int 
             .apply()
         return paso
     }
-
 
     val activo: Boolean
         get() {

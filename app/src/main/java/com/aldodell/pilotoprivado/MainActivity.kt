@@ -9,12 +9,22 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
+import com.paypal.android.sdk.payments.PayPalConfiguration
+import com.paypal.android.sdk.payments.PayPalService
+
+
 //import com.google.firebase.auth.FirebaseUser
 
 lateinit var baseDatos: BaseDatos
 const val nombreArchivoBaseDatos = "raw/ppa.db3"
 //var usuario: FirebaseUser? = null
 
+//const val PAYPAL_CLIENT_ID =
+   // "ASge1E1L7HFK4zqFMogGuQ-IkKx_rKy52hdRfA76jf-2cxRho1IsUOLTpDlySkDBbDdMinbneYnAHudV"
+//const val PAYPAL_SECRET = "EOL0tY1rgkw-D-I8fEnYr84sBfAbfz9T6S1ZJT-jAKMH3I_56Mmeb2YOoDupXcq0wFOWZ0RRjle0ctA-"
+
+const val PAYPAL_CLIENT_ID ="AZF0FfFL8vlSd9nuzCM8HitBDSTPdNyJhWI-s9EiP7kJeXBV258i6T5SsfkgkmEUn_apo7hxW9JjQF_l"
+const val PAYPAL_SECRET ="EL8toArH1tqOaTNggHdrK3n-d4FrJkmTtPnLwlEZTkSNaAHQd1oLfK8ao1SMHaVpBBHlppI0t8vuE_WA"
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +33,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var btMostrarResultados: Button
     lateinit var tvVersion: TextView
     lateinit var tvRegistrarAplicativo: TextView
+    lateinit var btnPaypal : Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         btMostrarResultados = findViewById(R.id.btMostrarResultados)
         tvVersion = findViewById(R.id.tvVersion)
         tvRegistrarAplicativo = findViewById(R.id.tvRegistrarAplicativo)
+
 
         //Configurar BD
         baseDatos = Room.databaseBuilder(this.baseContext, BaseDatos::class.java, "preguntas")
@@ -84,7 +97,13 @@ class MainActivity : AppCompatActivity() {
         val reg = Registro(this)
 
 
+
+
+
+
     }
+
+
 
 
     /*
